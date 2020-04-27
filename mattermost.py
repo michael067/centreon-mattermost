@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright (c) 2015 NDrive SA
 #
@@ -22,9 +22,9 @@
 
 import argparse
 import json
-import urllib2
+import urllib3
 
-VERSION = "0.3.1"
+VERSION = "0.3.2"
 
 
 def parse():
@@ -106,4 +106,4 @@ def request(url, data):
 if __name__ == "__main__":
     args = parse()
     response = request(args.url, payload(args))
-    print response
+    print (response)
