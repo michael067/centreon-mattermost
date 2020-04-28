@@ -77,12 +77,11 @@ def payload(args):
 
 
 def request(url, data):
-    req = urllib2.Request(url, data)
-    response = urllib2.urlopen(req)
-    return response.read()
+    response = requests.post(url=url, json=data)
+    return response
 
 
 if __name__ == "__main__":
     args = parse()
-    response = request(args.url, payload(args))
+    response = request(url, payload(args))
     print (response)
