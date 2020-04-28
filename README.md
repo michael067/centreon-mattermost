@@ -1,7 +1,7 @@
-Nagios Mattermost Plugin
+Centreon Mattermost Plugin
 ========================
 
-A plugin for [Nagios](https://www.nagios.org/) and compatible software (e.g. [Icinga](https://www.icinga.org/)) to enable notifications to a [Mattermost](http://www.mattermost.org/) server.
+A plugin for [Centreon](https://www.centreon.com/) to enable notifications to a [Mattermost](http://www.mattermost.org/) server.
 
 ## Plugin Usage
 
@@ -15,15 +15,15 @@ Run `./mattermost.py --help` for full usage information.
 
 3. To use the optional `--iconurl` parameter you must enable overriding of icons from webhooks. Check the **Enable Overriding Icon from Webhooks and Slash Commands** option under **Service Settings** in the *System Console*.
 
-## Nagios Configuration
+## Centreon Configuration
 
 The steps below are for a Nagios 4 server but should work with minimal modifications for compatible software:
 
-1. Copy `mattermost.py` to `/usr/local/nagios/libexec`.
+1. Copy `mattermost.py` to `/usr/local/lib/centreon/plugins`.
 
 2. Create an *Incoming Webhook* integration for the approriate team and note the provided URL.
 
-3. Create the command definitions in your Nagios configuration:
+3. Create the command definitions in your Centreon configuration:
 
     ```
     define command {
