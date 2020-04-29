@@ -65,8 +65,8 @@ def payload(args):
     if args.username:
         data.update({"username": args.username })
 
-    data = json.dumps(payload)
-    return data
+    data1 = json.dumps(payload)
+    return data1
 
 if __name__ == "__main__":
     args = parse()
