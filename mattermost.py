@@ -4,8 +4,7 @@
 
 import argparse
 import requests
-#import json
-#import urllib3
+import json
 import pprint
 
 
@@ -50,7 +49,7 @@ def emoji(notificationtype):
 
 
 def text(args):
-    template_host = "__{notificationtype}__ {hostalias} is {hoststate}\n{hostoutput}"
+    template_host = "__{notificationtype}__ {hostalias} at {hostaddress} is {hoststate}\n{hostoutput}"
     template_service = "__{notificationtype}__ {hostalias} at {hostaddress}/{servicedesc} is {servicestate}\n{serviceoutput}"
     template = template_service if args.servicestate else template_host
 
@@ -60,28 +59,21 @@ def text(args):
 
 
 def payload(args):
-    payload = {
-        "username": args.username,
+    data = {
         "icon_url": args.iconurl,
-        "text": text(args)
+        "text": text(args),
     }
 
     if args.channel:
-        payload["channel"] = args.channel
+        data.update({"channel": args.channel })
         
     if args.username:
-        payload["username"] = args.username
+        data.update({"username": args.username })
 
-    data = "payload=" + json.dumps(payload)
+    data = json.dumps(payload)
     return data
-
-
-def request(url, data):
-    response = requests.post(url=url, json=data)
-    return response
-
 
 if __name__ == "__main__":
     args = parse()
-    response = request(url, payload(args))
-    print (response)
+    response = requests.post(args.url, payload(args), {'Content-Type': 'application/json'})
+    #print(response)
