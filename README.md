@@ -23,7 +23,7 @@ pip3 install requests
 
 ## Centreon Configuration
 
-The steps below are for a Nagios 4 server but should work with minimal modifications for compatible software:
+The steps below are for a Centreon 20.04 server but should work with minimal modifications for compatible software:
 
 1. Copy `mattermost.py` to `/usr/lib/centreon/plugins`.
 
