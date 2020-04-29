@@ -5,11 +5,8 @@
 import argparse
 import requests
 import json
-import pprint
-
 
 VERSION = "1.0.0"
-
 
 def parse():
     parser = argparse.ArgumentParser(description='Sends alerts to Mattermost')
@@ -32,12 +29,10 @@ def parse():
     args = parser.parse_args()
     return args
 
-
 def encode_special_characters(text):
     text = text.replace("%", "%25")
     text = text.replace("&", "%26")
     return text
-
 
 def emoji(notificationtype):
     return {
@@ -47,7 +42,6 @@ def emoji(notificationtype):
         "DOWNTIMEEND": ":sunny: "
     }.get(notificationtype, "")
 
-
 def text(args):
     template_host = "__{notificationtype}__ {hostalias} at {hostaddress} is {hoststate}\n{hostoutput}"
     template_service = "__{notificationtype}__ {hostalias} at {hostaddress}/{servicedesc} is {servicestate}\n{serviceoutput}"
@@ -56,7 +50,6 @@ def text(args):
     text = emoji(args.notificationtype) + template.format(**vars(args))
 
     return encode_special_characters(text)
-
 
 def payload(args):
     data = {
