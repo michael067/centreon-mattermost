@@ -79,7 +79,7 @@ The steps below are for a Centreon 20.04 server but should work with minimal mod
 5. Add the contact to a contact group in your Centreon configuration:
 
     ```
-    contactgroup_name       network-admins
-    alias                   Network Administrators
+    contactgroup_name       Supervisors
+    alias                   Centreon supervisors
     members                 mattermost
     ```
