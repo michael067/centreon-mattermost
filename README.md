@@ -24,8 +24,11 @@ The steps below are for a Nagios 4 server but should work with minimal modificat
 2. Create an *Incoming Webhook* integration for the approriate team and note the provided URL.
 
 3. Create the command definitions in your Centreon configuration: 
+
    Configuration - Commands - Notifications
+   
    Add
+   
    host-notify-by-mattermost
     ```
     $CENTREONPLUGINS$/mattermost.py --url "$CONTACTEMAIL$" \
@@ -38,6 +41,7 @@ The steps below are for a Nagios 4 server but should work with minimal modificat
     --hostoutput "$HOSTOUTPUT$"
     ```
     Add
+    
     service-notify-by-mattermost
     ```
     $CENTREONPLUGINS$/mattermost.py --url "$CONTACTEMAIL$" \
@@ -54,24 +58,22 @@ The steps below are for a Nagios 4 server but should work with minimal modificat
 4. Create the contacts/Users definition in your Centreon configuration:
 
     ```
-        Login                                mattermost
-        Full Name                            Centreon  ( Username in Mattermost ) 
-        Email                                https://mattermost_hook... ( required )
-        Pager                                Channel in mattermost ( optional )
-        service_notification_period          24x7
-        host_notification_period             24x7
-        service_notification_options         w,u,c,r
-        host_notification_options            d,u,rr
-        host_notification_commands           host-notify-by-mattermost
-        service_notification_commands        service-notify-by-mattermost
-
+    Login                                mattermost
+    Full Name                            Centreon  ( Username in Mattermost ) 
+    Email                                https://mattermost_hook... ( required )
+    Pager                                Channel in mattermost ( optional )
+    service_notification_period          24x7
+    host_notification_period             24x7
+    service_notification_options         w,u,c,r
+    host_notification_options            d,u,rr
+    host_notification_commands           host-notify-by-mattermost
+    service_notification_commands        service-notify-by-mattermost
    ```
 
 5. Add the contact to a contact group in your Centreon configuration:
 
     ```
-        contactgroup_name       network-admins
-        alias                   Network Administrators
-        members                 mattermost
-
+    contactgroup_name       network-admins
+    alias                   Network Administrators
+    members                 mattermost
     ```
