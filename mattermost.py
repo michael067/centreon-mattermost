@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 # License : See LICENSE
+# Modify for Centreon and python3 by Michael067
+# Version 1.0.0 - 29/04/2020
 
 import argparse
 import requests
