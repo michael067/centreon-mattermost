@@ -7,6 +7,10 @@ A plugin for [Centreon](https://www.centreon.com/) to enable notifications to a 
 
 Run `./mattermost.py --help` for full usage information.
 
+yum install python3
+
+pip3 install requests
+
 ## Mattermost Configuration
 
 1. *Incoming Webhooks* must be enabled for your Mattermost server. Check the **Enable Incoming Webhooks** option under **Service Settings** in the *System Console*.
