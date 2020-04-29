@@ -13,6 +13,8 @@ yum install python3
 
 pip3 install requests
 
+pip3 install argparse
+
 ## Mattermost Configuration
 
 1. *Incoming Webhooks* must be enabled for your Mattermost server. Check the **Enable Incoming Webhooks** option under **Service Settings** in the *System Console*.
