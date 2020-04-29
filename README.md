@@ -7,6 +7,8 @@ A plugin for [Centreon](https://www.centreon.com/) to enable notifications to a 
 
 Run `./mattermost.py --help` for full usage information.
 
+## Required for centos
+
 yum install python3
 
 pip3 install requests
