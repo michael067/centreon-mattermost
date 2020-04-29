@@ -62,7 +62,7 @@ The steps below are for a Centreon 20.04 server but should work with minimal mod
     ```
 
 4. Create the contacts/Users definition in your Centreon configuration:
-
+   Access Disabled, Status Enabled
     ```
     Login                                mattermost
     Full Name                            Centreon  ( Username in Mattermost ) 
