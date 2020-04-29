@@ -29,6 +29,10 @@ The steps below are for a Centreon 20.04 server but should work with minimal mod
 
 1. Copy `mattermost.py` to `/usr/lib/centreon/plugins`.
 
+    wget -O /usr/lib/centreon/plugins/mattermost.py https://raw.githubusercontent.com/michael067/centreon-mattermost/master/mattermost.py
+    
+    chmod +x /usr/lib/centreon/plugins/mattermost.py
+    
 2. Create an *Incoming Webhook* integration for the approriate team and note the provided URL.
 
 3. Create the command definitions in your Centreon configuration: 
